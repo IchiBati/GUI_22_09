@@ -23,6 +23,8 @@ set(PROJECT_SOURCES
         countryfootprint.cpp
         carbonfootprintdatabase.h
         carbonfootprintdatabase.cpp
+	userlistmodel.h
+	userlistmodel.cpp
         resources.qrc
 )
 

@@ -7,6 +7,11 @@ CarbonFootprintDatabase& CarbonFootprintDatabase::instance()
     return databaseInstance;
 }
 
+QList<CountryFootprint> &CarbonFootprintDatabase::countries()
+{
+    return m_countries;
+}
+
 CarbonFootprintDatabase::CarbonFootprintDatabase()
 {
 

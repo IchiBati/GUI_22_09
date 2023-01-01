@@ -6,7 +6,7 @@
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    CarbonFootprintDatabase::instance();
+    CarbonFootprintDatabase cd = CarbonFootprintDatabase::instance();
     MainWindow w;
 
     w.show();

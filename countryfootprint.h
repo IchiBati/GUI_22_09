@@ -8,7 +8,7 @@ class CountryFootprint
 {
 
 public:
-    CountryFootprint();
+    CountryFootprint(QString name, int co2);
     ~CountryFootprint();
 
     QString nameOfCountry() const;

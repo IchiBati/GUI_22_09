@@ -7,12 +7,12 @@
 class CarbonFootprintDatabase
 {
 public:
-    QList<CountryFootprint> m_countries;
     static CarbonFootprintDatabase& instance();
+    QList<CountryFootprint>& countries();
 
 private:
     CarbonFootprintDatabase();
-
+    QList<CountryFootprint> m_countries;
 };
 
 #endif // CARBONFOOTPRINTDATABASE_H

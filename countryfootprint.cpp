@@ -1,6 +1,12 @@
 #include "countryfootprint.h"
 
-CountryFootprint::CountryFootprint()
+CountryFootprint::CountryFootprint(QString name, int co2)
+{
+    m_nameOfCountry = name;
+    m_co2InKilograms = co2;
+}
+
+CountryFootprint::~CountryFootprint()
 {
 
 }
