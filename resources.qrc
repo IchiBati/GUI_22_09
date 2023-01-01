@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/">
+        <file>icons/pencil.png</file>
+        <file>icons/remove.png</file>
+        <file>icons/hinzufugen.png</file>
+    </qresource>
+</RCC>
