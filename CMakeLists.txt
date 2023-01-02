@@ -25,6 +25,9 @@ set(PROJECT_SOURCES
         carbonfootprintdatabase.cpp
 	userlistmodel.h
 	userlistmodel.cpp
+	addcountrydialog.h
+	addcountrydialog.cpp
+	addcountrydialog.ui
         resources.qrc
 )
 

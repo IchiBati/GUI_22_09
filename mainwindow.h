@@ -19,6 +19,8 @@ public:
 private slots:
 
 
+    void on_editButton_clicked();
+
 private:
     Ui::MainWindow *ui;
     UserListModel m_userlistmodel;

@@ -2,6 +2,7 @@
 #include "ui_mainwindow.h"
 #include <QMessageBox>
 #include "carbonfootprintdatabase.h"
+#include <addcountrydialog.h>
 
 
 MainWindow::MainWindow(QWidget *parent)
@@ -24,4 +25,11 @@ MainWindow::~MainWindow()
 
 
 
+
+
+void MainWindow::on_editButton_clicked()
+{
+    AddCountryDialog dialog;
+    dialog.exec();
+}
 

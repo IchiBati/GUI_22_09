@@ -13,7 +13,7 @@ QVariant UserListModel::headerData(int section, Qt::Orientation orientation, int
         if(orientation == Qt::Horizontal){
             switch(section){
             case 0: return "Country";
-            case 1: return "CO2 (in million tons";
+            case 1: return "CO2 (in million tons)";
             }
         }else{
            return QString::number(section + 1);
@@ -24,15 +24,7 @@ QVariant UserListModel::headerData(int section, Qt::Orientation orientation, int
     return QVariant();
 }
 
-bool UserListModel::setHeaderData(int section, Qt::Orientation orientation, const QVariant &value, int role)
-{
-    if (value != headerData(section, orientation, role)) {
-        // FIXME: Implement me!
-        emit headerDataChanged(orientation, section, section);
-        return true;
-    }
-    return false;
-}
+
 
 QModelIndex UserListModel::index(int row, int column, const QModelIndex &parent) const
 {
