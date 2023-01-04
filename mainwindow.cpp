@@ -23,13 +23,22 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-
-
-
-
-void MainWindow::on_editButton_clicked()
+UserListModel &MainWindow::userlistModel()
 {
+    return m_userlistmodel;
+}
+
+
+
+
+
+void MainWindow::on_addButton_clicked()
+{
+
     AddCountryDialog dialog;
-    dialog.exec();
+
+    if(dialog.exec() == QDialog::Accepted){
+        m_userlistmodel.insertRows(CarbonFootprintDatabase::instance().countries().length(), 1, CountryFootprint(dialog.countryEditText(), dialog.co2EditText()));
+    }
 }
 

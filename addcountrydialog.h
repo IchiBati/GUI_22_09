@@ -1,6 +1,8 @@
 #ifndef ADDCOUNTRYDIALOG_H
 #define ADDCOUNTRYDIALOG_H
 
+#include "countryfootprint.h"
+
 #include <QDialog>
 
 namespace Ui {
@@ -15,8 +17,19 @@ public:
     explicit AddCountryDialog(QWidget *parent = nullptr);
     ~AddCountryDialog();
 
+    QString countryEditText() const;
+    int co2EditText() const;
+
+
+private slots:
+
+
+    void on_buttonBox_accepted();
+
 private:
     Ui::AddCountryDialog *ui;
+    QString m_countryEditText;
+    int m_co2EditText;
 };
 
 #endif // ADDCOUNTRYDIALOG_H

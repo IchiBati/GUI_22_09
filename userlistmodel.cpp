@@ -80,10 +80,10 @@ Qt::ItemFlags UserListModel::flags(const QModelIndex &index) const
     return QAbstractItemModel::flags(index) | Qt::ItemIsEditable; // FIXME: Implement me!
 }
 
-bool UserListModel::insertRows(int row, int count, const QModelIndex &parent)
+bool UserListModel::insertRows(int row, int count, const CountryFootprint country, const QModelIndex &parent)
 {
     beginInsertRows(parent, row, row + count - 1);
-    // FIXME: Implement me!
+    m_countries.append(country);
     endInsertRows();
     return true;
 }
@@ -110,4 +110,9 @@ bool UserListModel::removeColumns(int column, int count, const QModelIndex &pare
     // FIXME: Implement me!
     endRemoveColumns();
     return true;
+}
+
+QList<CountryFootprint> UserListModel::countries()
+{
+    return m_countries;
 }

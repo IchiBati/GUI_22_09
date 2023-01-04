@@ -15,11 +15,12 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+    UserListModel& userlistModel();
 
 private slots:
 
 
-    void on_editButton_clicked();
+    void on_addButton_clicked();
 
 private:
     Ui::MainWindow *ui;
