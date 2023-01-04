@@ -22,6 +22,8 @@ private slots:
 
     void on_addButton_clicked();
 
+    void on_actionAdd_triggered();
+
 private:
     Ui::MainWindow *ui;
     UserListModel m_userlistmodel;

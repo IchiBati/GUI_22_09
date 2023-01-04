@@ -13,6 +13,7 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
+
     ui->userTableView->setModel(&m_userlistmodel);
 
 
@@ -40,5 +41,11 @@ void MainWindow::on_addButton_clicked()
     if(dialog.exec() == QDialog::Accepted){
         m_userlistmodel.insertRows(CarbonFootprintDatabase::instance().countries().length(), 1, CountryFootprint(dialog.countryEditText(), dialog.co2EditText()));
     }
+}
+
+
+void MainWindow::on_actionAdd_triggered()
+{
+    on_addButton_clicked();
 }
 

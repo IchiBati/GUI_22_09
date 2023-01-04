@@ -26,6 +26,8 @@ private slots:
 
     void on_buttonBox_accepted();
 
+    void disableEmptyLineEdit();
+
 private:
     Ui::AddCountryDialog *ui;
     QString m_countryEditText;
