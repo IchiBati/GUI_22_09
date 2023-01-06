@@ -33,11 +33,11 @@ public:
 
     // Add data:
     bool insertRows(int row, int count, const CountryFootprint country, const QModelIndex &parent = QModelIndex());
-    bool insertColumns(int column, int count, const QModelIndex &parent = QModelIndex()) override;
+
 
     // Remove data:
     bool removeRows(int row, int count, const QModelIndex &parent = QModelIndex()) override;
-    bool removeColumns(int column, int count, const QModelIndex &parent = QModelIndex()) override;
+
 
     QList<CountryFootprint> countries();
 

@@ -18,20 +18,26 @@ public:
     ~AddCountryDialog();
 
     QString countryEditText() const;
-    int co2EditText() const;
+    QString co2EditText() const;
+
+    void setCountryEditText(QString country);
+    void setco2EditText(QString co2);
+
+
+signals:
+    void lineEditTextChanged();
+
 
 
 private slots:
-
-
     void on_buttonBox_accepted();
-
     void disableEmptyLineEdit();
+    void updateLineEditText();
 
 private:
     Ui::AddCountryDialog *ui;
     QString m_countryEditText;
-    int m_co2EditText;
+    QString m_co2EditText;
 };
 
 #endif // ADDCOUNTRYDIALOG_H

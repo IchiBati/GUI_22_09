@@ -19,3 +19,13 @@ QString CountryFootprint::nameOfCountry() const{
 int CountryFootprint::co2InKilogram() const{
     return m_co2InKilograms;
 }
+
+void CountryFootprint::setNameOfCountry(const QString &newNameOfCountry)
+{
+    m_nameOfCountry = newNameOfCountry;
+}
+
+void CountryFootprint::setCo2InKilograms(int newCo2InKilograms)
+{
+    m_co2InKilograms = newCo2InKilograms;
+}

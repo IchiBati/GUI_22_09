@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include "userlistmodel.h"
+#include <QItemSelectionModel>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -17,6 +18,8 @@ public:
     ~MainWindow();
     UserListModel& userlistModel();
 
+
+
 private slots:
 
 
@@ -24,8 +27,19 @@ private slots:
 
     void on_actionAdd_triggered();
 
+    void on_deleteButton_clicked();
+
+    void EnableDeleteWhenSelected();
+
+    void EnableEditWhenSelected();
+
+    void on_actionDelete_triggered();
+
+    void on_editButton_clicked();
+
 private:
     Ui::MainWindow *ui;
     UserListModel m_userlistmodel;
+    QItemSelectionModel* m_select;
 };
 #endif // MAINWINDOW_H

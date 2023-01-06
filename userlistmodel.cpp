@@ -65,9 +65,14 @@ QVariant UserListModel::data(const QModelIndex &index, int role) const
 bool UserListModel::setData(const QModelIndex &index, const QVariant &value, int role)
 {
     if (data(index, role) != value) {
-        // FIXME: Implement me!
-        emit dataChanged(index, index, {role});
-        return true;
+        if(role == Qt::EditRole){
+            CountryFootprint* country = (CountryFootprint*)value.data();
+            m_countries[index.row()].setCo2InKilograms(country->co2InKilogram());
+            m_countries[index.row()].setNameOfCountry(country->nameOfCountry());
+            emit dataChanged(index, index, {role});
+            return true;
+        }
+
     }
     return false;
 }
@@ -88,29 +93,17 @@ bool UserListModel::insertRows(int row, int count, const CountryFootprint countr
     return true;
 }
 
-bool UserListModel::insertColumns(int column, int count, const QModelIndex &parent)
-{
-    beginInsertColumns(parent, column, column + count - 1);
-    // FIXME: Implement me!
-    endInsertColumns();
-    return true;
-}
+
 
 bool UserListModel::removeRows(int row, int count, const QModelIndex &parent)
 {
     beginRemoveRows(parent, row, row + count - 1);
-    // FIXME: Implement me!
+    m_countries.removeAt(row);
     endRemoveRows();
     return true;
 }
 
-bool UserListModel::removeColumns(int column, int count, const QModelIndex &parent)
-{
-    beginRemoveColumns(parent, column, column + count - 1);
-    // FIXME: Implement me!
-    endRemoveColumns();
-    return true;
-}
+
 
 QList<CountryFootprint> UserListModel::countries()
 {
